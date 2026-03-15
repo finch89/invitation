@@ -297,8 +297,8 @@ class Events {
         $stmt = $this->conn->prepare("
             SELECT i.*, u.firstname, u.lastname, u.email 
             FROM invitations i 
-            LEFT JOIN users u ON i.guest_email = u.email
-            WHERE i.event_id = ?
+            LEFT JOIN users u ON i.email = u.email
+            WHERE i.id = ?
             ORDER BY i.created_at DESC
         ");
         $stmt->execute([$this->id]);
@@ -325,7 +325,7 @@ class Events {
                 SUM(CASE WHEN status = 'declined' THEN 1 ELSE 0 END) as declined,
                 SUM(CASE WHEN status = 'maybe' THEN 1 ELSE 0 END) as maybe
             FROM invitations 
-            WHERE event_id = ?
+            WHERE id = ?
         ");
         $stmt->execute([$this->id]);
         
