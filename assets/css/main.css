@@ -20,10 +20,13 @@
 @import url('02-components/stats.css');
 @import url('02-components/action-lists.css');
 
+
 /* Pages */
 @import url('03-pages/home.css');
 @import url('03-pages/dashboard.css');
 @import url('03-pages/auth.css');
+@import url('03-pages/events.css');
+@import url('03-pages/admin.css');
 
 /* Layout */
 @import url('04-layout/footer.css');

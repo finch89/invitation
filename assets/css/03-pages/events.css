@@ -1,0 +1,454 @@
+/* ========================================
+   03. PAGES - ÉVÉNEMENTS
+   ======================================== */
+
+/* ----- Grille des événements ----- */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* ----- Carte d'événement ----- */
+.event-card {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-speed);
+    border: 1px solid var(--border-light);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-soft);
+}
+
+.event-card .card-header {
+    padding: 1.25rem;
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.event-card .card-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.event-card .card-body {
+    padding: 1.25rem;
+    flex: 1;
+}
+
+.event-card .card-footer {
+    padding: 1rem 1.25rem;
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+/* ----- Mini statistiques sur les cartes ----- */
+.stats-mini {
+    display: flex;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin: 1rem 0;
+}
+
+.stats-mini-item {
+    text-align: center;
+    flex: 1;
+}
+
+.stats-mini-value {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.stats-mini-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ----- En-tête de page événement ----- */
+.event-header {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--accent-soft) 0%, var(--bg-card) 100%);
+    border-radius: var(--border-radius-lg);
+    border-left: 4px solid var(--accent-primary);
+}
+
+.event-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.event-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.event-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.event-meta-icon {
+    font-size: 2rem;
+    min-width: 2.5rem;
+    text-align: center;
+}
+
+.event-meta-content {
+    flex: 1;
+}
+
+.event-meta-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.event-meta-value {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+/* ----- Description de l'événement ----- */
+.event-description {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-md);
+    white-space: pre-line;
+    line-height: 1.8;
+}
+
+.event-description h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+}
+
+/* ----- Table des invités ----- */
+.invitations-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.invitations-table th {
+    text-align: left;
+    padding: 1rem 0.75rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.invitations-table td {
+    padding: 0.875rem 0.75rem;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-secondary);
+}
+
+.invitations-table tr:hover td {
+    background-color: var(--bg-hover);
+}
+
+.invitations-table .guest-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.invitations-table .guest-email {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+/* ----- Formulaire d'invitation ----- */
+.invitation-form {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.invitation-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.invitation-list {
+    margin-top: 2rem;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 1rem;
+}
+
+.invitation-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-light);
+    transition: background-color var(--transition-speed);
+}
+
+.invitation-item:last-child {
+    border-bottom: none;
+}
+
+.invitation-item:hover {
+    background-color: var(--bg-hover);
+}
+
+.invitation-item .guest-info {
+    flex: 1;
+}
+
+.invitation-item .guest-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.invitation-item .guest-email {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.invitation-item .guest-status {
+    min-width: 100px;
+    text-align: center;
+}
+
+/* ----- Badges de statut d'invitation ----- */
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-pending {
+    background-color: var(--warning-soft);
+    color: var(--warning-text);
+    border: 1px solid var(--warning-border);
+}
+
+.status-accepted {
+    background-color: var(--success-soft);
+    color: var(--success-text);
+    border: 1px solid var(--success-border);
+}
+
+.status-declined {
+    background-color: var(--error-soft);
+    color: var(--error-text);
+    border: 1px solid var(--error-border);
+}
+
+.status-maybe {
+    background-color: var(--info-soft);
+    color: var(--info-text);
+    border: 1px solid var(--info-border);
+}
+
+/* ----- Filtres pour les événements ----- */
+.events-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-lg);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+.filter-group select,
+.filter-group input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* ----- Vue calendrier (optionnelle) ----- */
+.calendar-view {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.calendar-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.calendar-nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.calendar-day-header {
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-muted);
+    padding: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    padding: 0.5rem;
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-md);
+    transition: all var(--transition-speed);
+    cursor: pointer;
+    position: relative;
+}
+
+.calendar-day:hover {
+    background-color: var(--accent-soft);
+    transform: scale(1.05);
+}
+
+.calendar-day.has-event {
+    background-color: var(--accent-soft);
+    border: 2px solid var(--accent-primary);
+}
+
+.calendar-day-number {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.calendar-event-indicator {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-primary);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0.25rem;
+    right: 0.25rem;
+}
+
+/* ----- Responsive pour les événements ----- */
+@media (max-width: 768px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .event-header h1 {
+        font-size: 2rem;
+    }
+    
+    .event-meta-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .invitation-form .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .invitations-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .calendar-grid {
+        gap: 0.25rem;
+    }
+    
+    .calendar-day {
+        padding: 0.25rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-filters {
+        flex-direction: column;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .event-meta-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .invitation-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
