@@ -1,0 +1,40 @@
+/* ========================================
+   02. COMPOSANTS - STATISTIQUES
+   ======================================== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.stat-card {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-primary);
+    line-height: 1.2;
+}
+
+.stat-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-bar {
+    background-color: var(--bg-secondary);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}

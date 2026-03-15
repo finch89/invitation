@@ -1,0 +1,131 @@
+/* ========================================
+   00. VARIABLES ET THÈMES
+   ======================================== */
+
+/* ----------------------------------------
+   1.1 THÈME CLAIR (DÉFAUT) - Élégant et professionnel
+   ---------------------------------------- */
+:root {
+    /* ===== COULEURS DE BASE ===== */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f7fa;
+    --bg-card: #ffffff;
+    --bg-nav: rgba(255, 255, 255, 0.95);
+    --bg-footer: #f5f7fa;
+    --bg-hover: #f0f2f5;
+    
+    /* ===== COULEURS DE TEXTE ===== */
+    --text-primary: #1a1e24;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --text-light: #ffffff;
+    --text-link: #2563eb;
+    --text-link-hover: #1d4ed8;
+    
+    /* ===== COULEURS D'ACCENTUATION ===== */
+    --accent-primary: #2563eb;
+    --accent-secondary: #3b82f6;
+    --accent-hover: #1d4ed8;
+    --accent-soft: #dbeafe;
+    
+    /* ===== COULEURS FONCTIONNELLES ===== */
+    --success-bg: #f0fdf4;
+    --success-text: #166534;
+    --success-border: #86efac;
+    --success-soft: #dcfce7;
+    
+    --error-bg: #fef2f2;
+    --error-text: #991b1b;
+    --error-border: #fecaca;
+    --error-soft: #fee2e2;
+    
+    --warning-bg: #fffbeb;
+    --warning-text: #92400e;
+    --warning-border: #fde68a;
+    --warning-soft: #fef3c7;
+    
+    --info-bg: #eff6ff;
+    --info-text: #1e40af;
+    --info-border: #bfdbfe;
+    --info-soft: #dbeafe;
+    
+    /* ===== BORDURES ET OMBRES ===== */
+    --border-color: #e2e8f0;
+    --border-light: #edf2f7;
+    --border-dark: #cbd5e1;
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    
+    --shadow-hover: 0 20px 25px -5px rgba(37, 99, 235, 0.1), 0 10px 10px -5px rgba(37, 99, 235, 0.04);
+    
+    /* ===== EFFETS ===== */
+    --transition-speed: 0.2s;
+    --border-radius-sm: 0.375rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 0.75rem;
+    --border-radius-xl: 1rem;
+    --border-radius-full: 9999px;
+}
+
+/* ----------------------------------------
+   1.2 THÈME SOMBRE - Moderne et reposant
+   ---------------------------------------- */
+[data-theme="dark"] {
+    /* ===== COULEURS DE BASE ===== */
+    --bg-primary: #0a0c10;
+    --bg-secondary: #111318;
+    --bg-card: #1a1c23;
+    --bg-nav: rgba(10, 12, 16, 0.95);
+    --bg-footer: #111318;
+    --bg-hover: #2a2d35;
+    
+    /* ===== COULEURS DE TEXTE ===== */
+    --text-primary: #f0f2f5;
+    --text-secondary: #a0a8b8;
+    --text-muted: #6b7280;
+    --text-light: #0a0c10;
+    --text-link: #60a5fa;
+    --text-link-hover: #93c5fd;
+    
+    /* ===== COULEURS D'ACCENTUATION ===== */
+    --accent-primary: #60a5fa;
+    --accent-secondary: #3b82f6;
+    --accent-hover: #93c5fd;
+    --accent-soft: #1e3a5f;
+    
+    /* ===== COULEURS FONCTIONNELLES ===== */
+    --success-bg: #132b1a;
+    --success-text: #86efac;
+    --success-border: #2d6a4f;
+    --success-soft: #1e3a2e;
+    
+    --error-bg: #2f1515;
+    --error-text: #fecaca;
+    --error-border: #991b1b;
+    --error-soft: #4a1e1e;
+    
+    --warning-bg: #332614;
+    --warning-text: #fde68a;
+    --warning-border: #92400e;
+    --warning-soft: #4a3e1e;
+    
+    --info-bg: #172a45;
+    --info-text: #bfdbfe;
+    --info-border: #1e3a5f;
+    --info-soft: #1e3a5f;
+    
+    /* ===== BORDURES ET OMBRES ===== */
+    --border-color: #2d2f36;
+    --border-light: #23252b;
+    --border-dark: #3a3d45;
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    
+    --shadow-hover: 0 20px 25px -5px rgba(96, 165, 250, 0.2), 0 10px 10px -5px rgba(96, 165, 250, 0.1);
+}

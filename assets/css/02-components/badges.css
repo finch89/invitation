@@ -1,0 +1,42 @@
+/* ========================================
+   02. COMPOSANTS - BADGES
+   ======================================== */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-primary {
+    background-color: var(--accent-primary);
+    color: var(--text-light);
+}
+
+.badge-secondary {
+    background-color: var(--text-secondary);
+    color: var(--text-light);
+}
+
+.badge-success {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+}
+
+.badge-error {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+}
+
+.badge-user {
+    background-color: var(--accent-soft);
+    color: var(--accent-primary);
+}
+
+.badge-admin {
+    background-color: var(--accent-primary);
+    color: var(--text-light);
+    font-weight: bold;
+}

@@ -1,0 +1,33 @@
+/* ========================================
+   INVITATIONAPP - STYLES PRINCIPAUX
+   ========================================
+   Ce fichier importe tous les autres fichiers CSS
+   ======================================== */
+
+/* Variables et thèmes */
+@import url('00-variables.css');
+
+/* Base */
+@import url('01-base.css');
+
+/* Composants */
+@import url('02-components/navigation.css');
+@import url('02-components/buttons.css');
+@import url('02-components/forms.css');
+@import url('02-components/alerts.css');
+@import url('02-components/cards.css');
+@import url('02-components/badges.css');
+@import url('02-components/stats.css');
+@import url('02-components/action-lists.css');
+
+/* Pages */
+@import url('03-pages/home.css');
+@import url('03-pages/dashboard.css');
+@import url('03-pages/auth.css');
+
+/* Layout */
+@import url('04-layout/footer.css');
+@import url('04-layout/responsive.css');
+
+/* Utilitaires */
+@import url('05-utilities/utilities.css');

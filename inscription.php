@@ -13,37 +13,47 @@
     // Valider les données
     // Créer l'utilisateur dans la base de données
     // Envoyer un email
+    // Rediriger vers une page de succès ou de connexion
+?>
 
-
-    var_dump($_POST);
-    
-   if(isset($_POST['lastname'], $_POST['firstname'], $_POST['email'], $_POST['password'])){
-
+ <?php
+// 1. D'abord, créez votre connexion PDO
 $pdo = new PDO(
-    'mysql:host=localhost;dbname=bd_invitation;charset=utf8mb4',
-    'root',
-    '',
+    "mysql:host=localhost;dbname=bd_invitation;charset=utf8mb4",
+    "root",
+    "",
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
 );
 
-$password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+// 2. Créez l'objet User
+$user = new Users($pdo);
 
-$stmt = $pdo->prepare(
-"INSERT INTO users (lastname, firstname, email, password, role, created_at)
-VALUES (:lastname, :firstname, :email, :password, 'user', NOW())"
-);
+// 3. Utilisez les setters avec les données POST
+try {
+    $user->setLastname($_POST['lastname'])
+         ->setFirstname($_POST['firstname'])
+         ->setEmail($_POST['email'])
+         ->setPassword($_POST['password'])  // Le mot de passe en clair est automatiquement hashé
+         ->setRole('user');  // Optionnel, 'user' par défaut
 
-$stmt->execute([
-    ':lastname' => $_POST['lastname'],
-    ':firstname' => $_POST['firstname'],
-    ':email' => $_POST['email'],
-    ':password' => $password_hash
-]);
+    // 4. Sauvegardez en base de données
+    if ($user->sauvegarder()) {
+        echo "Inscription réussie !";
+        // Redirection vers page de connexion ou accueil
+        header('Location: connexion.php?success=1');
+        exit;
+    } else {
+        echo "Erreur lors de l'inscription";
+    }
 
-echo "Utilisateur créé";
+} catch (InvalidArgumentException $e) {
+    // Erreur de validation (champ vide, email invalide, mot de passe trop court...)
+    echo "Erreur de validation : " . $e->getMessage();
+} catch (Exception $e) {
+    // Autres erreurs (base de données, etc.)
+    echo "Erreur : " . $e->getMessage();
 }
-   
-    ?>
+?>
 
     <h1>S'inscrire</h1>
     <form action="" method="POST">

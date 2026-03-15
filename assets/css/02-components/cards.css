@@ -1,0 +1,38 @@
+/* ========================================
+   02. COMPOSANTS - CARDS
+   ======================================== */
+.card {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: all var(--transition-speed);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+    padding: 1.25rem;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-header h1,
+.card-header h2,
+.card-header h3 {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-footer {
+    padding: 1.25rem;
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
