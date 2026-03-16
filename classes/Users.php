@@ -14,11 +14,54 @@ class Users {
     }
 
     // Setters
+    //La porte d'entrée
+    /*
+    En clair : On crée une fonction publique (accessible depuis 
+    n'importe où dans ton code). Elle attend qu'on lui donne un 
+    ingrédient de base : la variable $lastname (qui vient 
+    généralement de ton formulaire, comme $_POST['nom']). 
+    */
     public function setLastname($lastname) {
+    //Le contrôle de sécurité (Le vigile)
+    /*
+    En clair : Le code vérifie si la case est vide. empty() 
+    regarde si l'utilisateur a cliqué sur "S'inscrire" en oubliant
+     de remplir son nom, ou s'il n'a mis qu'un zéro. 
+     */
         if (empty($lastname)) {
+    //Le message d'erreur (Le panneau d'affichage)
+    /*
+    En clair : Si le nom est vide, le code s'arrête net ici. 
+    La commande throw déclenche une alarme (une Exception). 
+    L'utilisateur ne sera pas enregistré, et cette phrase d'erreur
+    pourra être attrapée par ton fichier de traitement pour être 
+    affichée en rouge sur ton site : "Le nom ne peut pas être vide". 
+      */
             throw new InvalidArgumentException("Le nom ne peut pas être vide");
         }
+    //Le grand nettoyage (La magie !) 
+    /* 
+trim($lastname) : Cette fonction PHP sort ses ciseaux et coupe tous les espaces invisibles 
+    tapés par erreur au début et à la fin. Si l'utilisateur a tapé "   dupont  ", 
+    trim le transforme en "dupont".
+
+strtoupper(...) : Cette fonction prend le résultat propre et le force tout en MAJUSCULES.
+    "dupont" devient "DUPONT".
+
+$this->lastname = ... : Enfin, on prend ce beau résultat tout propre ("DUPONT") et on le range bien 
+    à l'abri dans le coffre-fort privé de notre classe ($this->lastname). C'est lui qui ira dans 
+    la base de données ! */  
         $this->lastname = strtoupper(trim($lastname));
+        //Le petit bonus pratique
+/*
+En clair : Cette ligne renvoie l'utilisateur en cours.
+
+À quoi ça sert ? C'est une astuce de développeur qui s'appelle le 
+"chaînage". Ça te permet d'écrire ton code PHP sur une seule ligne
+ de manière très élégante si tu le souhaites, comme ceci :
+
+$nouvelUtilisateur->setFirstname("Jean")->setLastname("Dupont")->setEmail("..."); 
+*/
         return $this;
     }
 

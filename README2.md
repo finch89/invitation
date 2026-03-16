@@ -38,7 +38,7 @@
 L'application suit une architecture MVC simplifiée avec séparation claire des responsabilités et intègre les meilleures pratiques de sécurité.
 
 ---
-### ✅ **Fonctionnalités actuelles** (Version 2.0)
+### ✅ **Fonctionnalités actuelles** (Version 1.0)
 
 #### **Authentification & Utilisateurs**
 - ✅ Inscription avec validation des données

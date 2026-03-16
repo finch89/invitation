@@ -23,7 +23,7 @@ include '../includes/header.php';
     
     <?php if (isset($_GET['error'])): ?>
         <div class="alert alert-danger">
-            <?= htmlspecialchars($_GET['error']) ?>
+            <?= htmlspecialchars($_GET['z']) ?>
         </div>
     <?php endif; ?>
     

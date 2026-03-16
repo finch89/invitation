@@ -1,8 +1,10 @@
+
+<?php
 // j'ai CSS dans la page pour que ce soit plus joli,mais c'est doit
 // etre dans la feuille de style, je le met la pour que tu puisse 
 // voir le resultat final, mais tu doit le mettre dans la feuille de style 
 // pour que ce soit plus propre et plus facile a maintenir css
-<?php
+
 session_start();
 require_once '../../config/database.php';
 require_once '../../classes/Users.php';
